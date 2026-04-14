@@ -18,11 +18,6 @@ export const metadata: Metadata = {
     "real-time analytics",
   ],
   authors: [{ name: "Inriser Consulting Private Limited" }],
-  icons: {
-    icon: "/Vipin.png",
-    shortcut: "/Vipin.png",
-    apple: "/Vipin.png",
-  },
   openGraph: {
     title: "Inriser | Elevate Your Wealth Strategy",
     description:
@@ -31,21 +26,12 @@ export const metadata: Metadata = {
     siteName: "Inriser",
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "/Vipin.png",
-        width: 1200,
-        height: 630,
-        alt: "Inriser Logo",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Inriser | Elevate Your Wealth Strategy",
     description:
       "The new-gen platform for precision investment tracking and deep market intelligence.",
-    images: ["/Vipin.png"],
   },
   robots: {
     index: true,
