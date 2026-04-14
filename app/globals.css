@@ -46,8 +46,8 @@
     linear-gradient(180deg, #090615 0%, #100a25 48%, #080512 100%);
   --atmosphere-bg: var(--site-bg);
   --atmosphere-bg-clean: var(--site-bg);
-  --hero-bg: radial-gradient(circle at 54% 90%, rgba(124, 58, 237, 0.18), transparent 34%),
-    linear-gradient(180deg, #090615 0%, #100a25 48%, #080512 100%);
+  --hero-bg: radial-gradient(circle at 54% 90%, rgba(124, 58, 237, 0.12), transparent 34%),
+    linear-gradient(180deg, #050312 0%, #0a0718 48%, #060410 100%);
   --atmosphere-grid-line: rgba(255, 255, 255, 0.11);
   --atmosphere-bottom-fade: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
   --hero-word-gradient: linear-gradient(90deg, #ffffff, #ddd6fe, #a78bfa);
@@ -95,8 +95,8 @@
     linear-gradient(180deg, #090615 0%, #100a25 48%, #080512 100%);
   --atmosphere-bg: var(--site-bg);
   --atmosphere-bg-clean: var(--site-bg);
-  --hero-bg: radial-gradient(circle at 54% 90%, rgba(124, 58, 237, 0.18), transparent 34%),
-    linear-gradient(180deg, #090615 0%, #100a25 48%, #080512 100%);
+  --hero-bg: radial-gradient(circle at 54% 90%, rgba(124, 58, 237, 0.12), transparent 34%),
+    linear-gradient(180deg, #050312 0%, #0a0718 48%, #060410 100%);
   --atmosphere-grid-line: rgba(255, 255, 255, 0.11);
   --atmosphere-bottom-fade: linear-gradient(to top, rgba(0, 0, 0, 0.35), transparent);
   --hero-word-gradient: linear-gradient(90deg, #ffffff, #ddd6fe, #a78bfa);

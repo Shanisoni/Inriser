@@ -72,26 +72,27 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 bg-[#05030b] pt-16 pb-8 overflow-hidden">
+    <footer className="relative border-t border-white/10 bg-[#05030b] pt-12 sm:pt-14 md:pt-16 pb-6 sm:pb-8 overflow-hidden">
       {/* Subtle background glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[1px] bg-gradient-to-r from-transparent via-primary-500/50 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-primary-500/8 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-5 lg:gap-8 mb-12 sm:mb-14 md:mb-16">
           
           {/* Brand Column */}
-          <div className="lg:col-span-2 flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-0 group inline-flex w-fit">
-              <span className="text-2xl font-bold tracking-tight text-text-primary">
+          <div className="lg:col-span-2 flex flex-col gap-4 sm:gap-5 md:gap-6 text-center md:text-left">
+            <Link href="/" className="flex items-center gap-0 group w-fit mx-auto md:mx-0">
+              <span className="text-xl sm:text-2xl font-bold tracking-tight text-text-primary">
                 inriser
               </span>
-              <span className="text-2xl font-bold text-accent">.</span>
+              <span className="text-xl sm:text-2xl font-bold text-accent">.</span>
             </Link>
-            <p className="text-sm text-text-secondary leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed max-w-sm mx-auto md:mx-0">
               Elevate your investment experience. Inriser tracks your wealth with forensic precision and provides market information that actually makes sense. No noise, just signals.
             </p>
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center gap-3 sm:gap-4 pt-1 sm:pt-2 justify-center md:justify-start">
               {socialLinks.map((social, index) => {
                 const Icon = social.icon;
                 return (
@@ -99,73 +100,75 @@ export function Footer() {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary-400 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all duration-300"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-border bg-background flex items-center justify-center text-text-secondary hover:text-primary hover:border-primary-400 hover:shadow-[0_0_15px_rgba(139,92,246,0.3)] transition-all duration-300"
                   >
-                    <Icon className="w-4 h-4" />
+                    <Icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </Link>
                 );
               })}
             </div>
           </div>
 
-          {/* Links Columns */}
-          <div>
-            <h3 className="font-semibold text-text-primary mb-5">Product</h3>
-            <ul className="flex flex-col gap-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-secondary hover:text-primary transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Links Columns — stacked 3-across on mobile, then grid on larger */}
+          <div className="grid grid-cols-3 gap-6 sm:gap-8 md:col-span-2 lg:col-span-3 lg:gap-8">
+            <div>
+              <h3 className="font-semibold text-xs sm:text-sm text-text-primary mb-3 sm:mb-4 md:mb-5">Product</h3>
+              <ul className="flex flex-col gap-2 sm:gap-3">
+                {footerLinks.product.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-xs sm:text-sm text-text-secondary hover:text-primary transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="font-semibold text-text-primary mb-5">Company</h3>
-            <ul className="flex flex-col gap-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-secondary hover:text-primary transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div>
+              <h3 className="font-semibold text-xs sm:text-sm text-text-primary mb-3 sm:mb-4 md:mb-5">Company</h3>
+              <ul className="flex flex-col gap-2 sm:gap-3">
+                {footerLinks.company.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-xs sm:text-sm text-text-secondary hover:text-primary transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          <div>
-            <h3 className="font-semibold text-text-primary mb-5">Legal</h3>
-            <ul className="flex flex-col gap-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-text-secondary hover:text-primary transition-colors duration-200"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <h3 className="font-semibold text-xs sm:text-sm text-text-primary mb-3 sm:mb-4 md:mb-5">Legal</h3>
+              <ul className="flex flex-col gap-2 sm:gap-3">
+                {footerLinks.legal.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-xs sm:text-sm text-text-secondary hover:text-primary transition-colors duration-200"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-text-tertiary">
+        <div className="pt-6 sm:pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-4">
+          <p className="text-[11px] sm:text-xs md:text-sm text-text-tertiary text-center sm:text-left">
             © {new Date().getFullYear()} Inriser Consulting Private Limited. All rights reserved.
           </p>
-          <div className="flex items-center gap-2 text-sm text-text-tertiary">
-            <Mail className="w-4 h-4" />
+          <div className="flex items-center gap-2 text-[11px] sm:text-xs md:text-sm text-text-tertiary">
+            <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <a href="mailto:contact@inriser.com" className="hover:text-primary transition-colors">
               contact@inriser.com
             </a>

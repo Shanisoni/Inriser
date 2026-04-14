@@ -16,10 +16,10 @@ export function HeroSection() {
         <div className="atmosphere-bottom-fade absolute inset-x-0 bottom-0 h-40" />
       </div>
 
-      <div className="relative z-10 max-w-5xl">
+      <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-4 sm:px-6">
         {/* Main Heading */}
         <motion.h1
-          className="font-montserrat text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-[560] tracking-tighter leading-[1.05] text-text-primary"
+          className="font-montserrat text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-[560] tracking-tighter leading-[1.1] text-text-primary"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
@@ -33,7 +33,7 @@ export function HeroSection() {
 
         {/* Subtitle */}
         <motion.p
-          className="mt-6 md:mt-8 mx-auto text-lg md:text-xl text-text-secondary leading-relaxed text-center max-w-3xl"
+          className="mt-5 sm:mt-6 md:mt-8 mx-auto text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl lg:max-w-3xl"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
@@ -45,7 +45,7 @@ export function HeroSection() {
 
         {/* CTA Button */}
         <motion.div
-          className="mt-12 md:mt-16 flex justify-center"
+          className="mt-8 sm:mt-10 md:mt-14 lg:mt-16 flex justify-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
@@ -57,7 +57,7 @@ export function HeroSection() {
 
         {/* Privacy Note */}
         <motion.p
-          className="mt-5 text-xs text-text-tertiary text-center mx-auto"
+          className="mt-4 sm:mt-5 text-xs text-text-tertiary mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.6 }}

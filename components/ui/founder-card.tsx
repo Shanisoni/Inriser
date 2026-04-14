@@ -34,16 +34,17 @@ export function FounderCard({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-[1.9rem] border border-white/12 bg-white/[0.04] p-6 md:p-7",
+        "relative overflow-hidden rounded-[1.25rem] sm:rounded-[1.5rem] md:rounded-[1.9rem] border border-white/12 bg-white/[0.04] p-4 sm:p-5 md:p-6 lg:p-7",
         "backdrop-blur-xl shadow-[inset_0_1px_0_rgba(255,255,255,0.05)]",
+        "text-left",
         className
       )}
     >
       <div className="absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/45 to-transparent" />
 
       <div>
-        <div className="flex items-center gap-3">
-          <h3 className="text-[1.65rem] font-[520] tracking-[-0.03em] text-white">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <h3 className="text-xl sm:text-2xl md:text-[1.65rem] font-[520] tracking-[-0.03em] text-white">
             {name}
           </h3>
           {linkedinUrl && (
@@ -51,32 +52,32 @@ export function FounderCard({
               href={linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full text-white/72 transition-colors hover:text-white"
+              className="inline-flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full text-white/72 transition-colors hover:text-white"
               aria-label={`${name}'s LinkedIn`}
             >
-              <LinkedinIcon className="h-4 w-4" />
+              <LinkedinIcon className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
             </a>
           )}
         </div>
-        <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.32em] text-white/58">
+        <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-[11px] font-medium uppercase tracking-[0.32em] text-white/58">
           {title}
         </p>
       </div>
 
-      <blockquote className="mt-6 text-sm italic leading-7 text-white/78">
+      <blockquote className="mt-4 sm:mt-5 md:mt-6 text-xs sm:text-sm italic leading-6 sm:leading-7 text-white/78">
         &ldquo;{quote}&rdquo;
       </blockquote>
 
-      <div className="mt-6">
-        <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-white/45">
+      <div className="mt-4 sm:mt-5 md:mt-6">
+        <p className="text-[9px] sm:text-[10px] font-medium uppercase tracking-[0.3em] text-white/45">
           Core expertise
         </p>
-        <div className="mt-3 flex flex-nowrap gap-2 overflow-x-auto pb-1">
+        <div className="mt-2 sm:mt-3 flex flex-wrap gap-1.5 sm:gap-2">
           {expertise.map((skill) => (
             <Badge
               key={skill}
               variant="founders"
-              className="shrink-0 border-white/12 bg-white/[0.06] px-3 text-[10px] font-medium tracking-[0.22em] text-white/78"
+              className="border-white/12 bg-white/[0.06] px-2 sm:px-3 py-1 text-[9px] sm:text-[10px] font-medium tracking-[0.22em] text-white/78"
             >
               {skill}
             </Badge>

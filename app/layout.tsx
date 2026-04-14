@@ -25,12 +25,21 @@ export const metadata: Metadata = {
     siteName: "Inriser",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Inriser - Elevate Your Wealth Strategy",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Inriser | Elevate Your Wealth Strategy",
     description:
       "The new-gen platform for precision investment tracking and deep market intelligence.",
+    images: ["/twitter-image.png"],
   },
   robots: {
     index: true,

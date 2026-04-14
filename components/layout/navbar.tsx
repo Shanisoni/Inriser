@@ -26,6 +26,18 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -44,21 +56,21 @@ export function Navbar() {
       </div>
 
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-3 items-center h-16 md:h-20">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo (Left) */}
-          <div className="flex justify-start">
+          <div className="flex-shrink-0">
             <Link href="/" className="flex items-center gap-0 group cursor-pointer" id="nav-logo">
-              <span className="text-2xl font-medium tracking-tight text-text-primary">
+              <span className="text-xl sm:text-2xl font-medium tracking-tight text-text-primary">
                 inriser
               </span>
-              <span className="text-2xl font-medium text-accent group-hover:scale-125 transition-transform duration-200">
+              <span className="text-xl sm:text-2xl font-medium text-accent group-hover:scale-125 transition-transform duration-200">
                 .
               </span>
             </Link>
           </div>
 
-          {/* Desktop Nav (Center) */}
-          <div className="hidden md:flex justify-center items-center gap-8">
+          {/* Desktop Nav (Center) — visible at lg and above */}
+          <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -77,16 +89,15 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Desktop Right (CTA Button) */}
-          <div className="hidden md:flex justify-end items-center">
+          {/* Desktop Right (CTA Button) — offset right to avoid ThemeToggle overlap */}
+          <div className="hidden lg:flex items-center pr-12">
             <Button variant="primary" size="sm" id="nav-cta">
               Join Waitlist
             </Button>
           </div>
 
-          {/* Mobile Controls */}
-          <div className="flex md:hidden justify-end items-center gap-2">
-            {/* ThemeToggle moved to absolute window edge */}
+          {/* Mobile / Tablet Controls — visible below lg, offset right to avoid ThemeToggle */}
+          <div className="flex lg:hidden items-center pr-12">
             <Dialog.Root open={mobileOpen} onOpenChange={setMobileOpen}>
               <Dialog.Trigger asChild>
                 <button
@@ -115,14 +126,18 @@ export function Navbar() {
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed top-0 right-0 h-full w-[80%] max-w-sm bg-background border-l border-border z-50 p-6"
+                        className="fixed top-0 right-0 h-full w-[80%] max-w-sm site-bg border-l border-border z-50 p-6 flex flex-col"
                       >
                         <VisuallyHidden.Root>
                           <Dialog.Title>Navigation Menu</Dialog.Title>
                           <Dialog.Description>Site navigation links</Dialog.Description>
                         </VisuallyHidden.Root>
 
-                        <div className="flex justify-end mb-8">
+                        {/* Drawer Header */}
+                        <div className="flex items-center justify-between mb-8">
+                          <span className="text-lg font-medium text-text-primary tracking-tight">
+                            inriser<span className="text-accent">.</span>
+                          </span>
                           <Dialog.Close asChild>
                             <button
                               className="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface-muted transition-colors focus-ring"
@@ -133,7 +148,8 @@ export function Navbar() {
                           </Dialog.Close>
                         </div>
 
-                        <div className="flex flex-col gap-4">
+                        {/* Drawer Links */}
+                        <div className="flex flex-col gap-1 flex-1">
                           {navLinks.map((link, i) => (
                             <motion.a
                               key={link.href}
@@ -142,22 +158,29 @@ export function Navbar() {
                               initial={{ opacity: 0, x: 20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: 0.1 + i * 0.05 }}
-                              className="text-lg font-semibold text-text-primary hover:text-primary transition-colors py-3 border-b border-border"
+                              className="text-base sm:text-lg font-semibold text-text-primary hover:text-primary transition-colors py-3 border-b border-border"
                             >
                               {link.label}
                             </motion.a>
                           ))}
-                          <motion.div
-                            initial={{ opacity: 0, y: 10 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: 0.3 }}
-                            className="pt-4"
-                          >
-                            <Button variant="primary" size="lg" className="w-full">
-                              Join Waitlist
-                            </Button>
-                          </motion.div>
                         </div>
+
+                        {/* Drawer CTA */}
+                        <motion.div
+                          initial={{ opacity: 0, y: 10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: 0.3 }}
+                          className="pt-4 mt-auto"
+                        >
+                          <Button
+                            variant="primary"
+                            size="lg"
+                            className="w-full"
+                            onClick={() => setMobileOpen(false)}
+                          >
+                            Join Waitlist
+                          </Button>
+                        </motion.div>
                       </motion.div>
                     </Dialog.Content>
                   </Dialog.Portal>
