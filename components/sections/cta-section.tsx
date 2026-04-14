@@ -59,7 +59,7 @@ export function CtaSection() {
                   <Button
                     variant="primary"
                     size="lg"
-                    className="min-w-[190px] rounded-2xl px-8 shadow-[0_18px_45px_rgba(167,139,250,0.24)]"
+                    className="rounded-xl"
                     id="cta-waitlist"
                   >
                     Join Waitlist

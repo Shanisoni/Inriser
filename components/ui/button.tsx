@@ -6,12 +6,12 @@ import { cn } from "@/lib/utils";
 
 const variants = {
   primary:
-    "bg-primary-600 text-white shadow-lg hover:bg-primary-500 hover:shadow-xl",
+    "bg-[#5f2bcf] text-white hover:bg-[#7242dd]",
   secondary:
     "bg-surface-muted text-text-primary border border-border hover:bg-surface",
   ghost: "text-text-primary hover:bg-surface-muted",
   accent:
-    "bg-accent text-white shadow-lg hover:bg-accent-light hover:shadow-xl",
+    "bg-accent text-white hover:bg-accent-light",
   outline:
     "border border-border text-text-primary hover:bg-surface-muted",
 };
@@ -38,7 +38,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         className={cn(
           "inline-flex items-center justify-center font-semibold",
-          "transition-all duration-300 ease-out",
+          "transition-colors duration-300 ease-out",
           "focus-ring cursor-pointer",
           "disabled:opacity-50 disabled:pointer-events-none",
           variants[variant],

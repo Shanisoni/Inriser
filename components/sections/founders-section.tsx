@@ -25,7 +25,7 @@ export function FoundersSection() {
       padding="lg"
       className="flat-section-bg relative overflow-hidden"
     >
-      <div className="relative z-10 grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+      <div className="relative z-10 grid items-center gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-24 xl:gap-28">
         <div className="max-w-2xl">
           <AnimatedContainer variant="fadeUp">
             <h2 className="font-montserrat text-4xl md:text-5xl lg:text-[4rem] font-[560] tracking-[-0.045em] leading-[0.98]">
