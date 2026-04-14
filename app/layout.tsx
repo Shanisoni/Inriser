@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.inriser.com"),
   title: "Inriser | Elevate Your Wealth Strategy",
   description:
     "Inriser is the new-gen platform for precision investment tracking and deep market intelligence. Timely updates on market actions helping you take right decisions at the right time.",

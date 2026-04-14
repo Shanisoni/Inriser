@@ -1,8 +1,6 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { SectionContainer } from "@/components/layout/section-container";
+import { AnimatedContainer } from "@/components/ui/animated-container";
 
 export function HeroSection() {
   return (
@@ -18,52 +16,51 @@ export function HeroSection() {
 
       <div className="relative z-10 w-full max-w-5xl mx-auto text-center px-4 sm:px-6">
         {/* Main Heading */}
-        <motion.h1
+        <AnimatedContainer
+          as="h1"
+          variant="fadeUp"
           className="font-montserrat text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-[560] tracking-tighter leading-[1.1] text-text-primary"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.25, 0.4, 0.25, 1] }}
         >
           Elevate Your{" "}
           <span className="hero-word-gradient bg-clip-text text-transparent">
             Wealth
           </span>{" "}
           Strategy
-        </motion.h1>
+        </AnimatedContainer>
 
         {/* Subtitle */}
-        <motion.p
+        <AnimatedContainer
+          as="p"
+          variant="fadeUp"
+          delay={0.2}
           className="mt-5 sm:mt-6 md:mt-8 mx-auto text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl lg:max-w-3xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.4, 0.25, 1] }}
         >
           Inriser is the new-gen platform for precision investment tracking and
           deep market intelligence. Timely updates on market actions helping you
           take right decisions at the right time.
-        </motion.p>
+        </AnimatedContainer>
 
         {/* CTA Button */}
-        <motion.div
+        <AnimatedContainer
+          as="div"
+          variant="fadeUp"
+          delay={0.4}
           className="mt-8 sm:mt-10 md:mt-14 lg:mt-16 flex justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4, ease: [0.25, 0.4, 0.25, 1] }}
         >
           <Button variant="primary" size="lg" id="hero-cta">
             Join Waitlist
           </Button>
-        </motion.div>
+        </AnimatedContainer>
 
         {/* Privacy Note */}
-        <motion.p
+        <AnimatedContainer
+          as="p"
+          variant="fadeIn"
+          delay={0.6}
           className="mt-4 sm:mt-5 text-xs text-text-tertiary mx-auto"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
         >
           By joining, you agree to our next-gen privacy terms.
-        </motion.p>
+        </AnimatedContainer>
       </div>
     </SectionContainer>
   );

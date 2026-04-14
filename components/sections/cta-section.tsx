@@ -1,4 +1,4 @@
-"use client";
+
 
 import { Button } from "@/components/ui/button";
 import { AnimatedContainer } from "@/components/ui/animated-container";

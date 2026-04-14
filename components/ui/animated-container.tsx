@@ -11,6 +11,10 @@ const motionElements = {
   section: motion.section,
   article: motion.article,
   span: motion.span,
+  h1: motion.h1,
+  h2: motion.h2,
+  h3: motion.h3,
+  p: motion.p,
 };
 
 const animationVariants: Record<AnimationVariant, Variants> = {
@@ -48,7 +52,7 @@ interface AnimatedContainerProps {
   className?: string;
   once?: boolean;
   amount?: number;
-  as?: "div" | "section" | "article" | "span";
+  as?: keyof typeof motionElements;
 }
 
 export function AnimatedContainer({

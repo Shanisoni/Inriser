@@ -1,4 +1,4 @@
-"use client";
+
 
 import { MapPin, Mail } from "lucide-react";
 import { SectionContainer } from "@/components/layout/section-container";
